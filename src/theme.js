@@ -1,6 +1,7 @@
 import { createContext,useState,useMemo } from "react";
 import { createTheme } from "@mui/material/styles";
 
+
 //color design tokens select verticall use:ctr+shift+alt+arrow
 export const tokens=(mode)=>({
 ...(mode=== "dark")? {
@@ -126,7 +127,8 @@ export const themeSettings=(mode)=>{
         palette:{
             mode:mode,
             ...(mode==='dark'
-            ?{
+            ?
+            {
                 primary:{
                     main:colors.primary[500],
                 },
@@ -134,14 +136,15 @@ export const themeSettings=(mode)=>{
                     main:colors.greenAccent[500],
                 },
                 neutral:{
-                    dark:colors.grey[700],
-                    main:colors.grey[500],
-                    light:colors.grey[100],
+                    dark:colors.gray[700],
+                    main:colors.gray[500],
+                    light:colors.gray[100],
                 },
                 background:{
                     default:colors.primary[500]
                 }
-            }:{
+            }
+            :{
                 primary:{
                     main:colors.primary[500],
                 },
@@ -149,9 +152,9 @@ export const themeSettings=(mode)=>{
                     main:colors.greenAccent[500],
                 },
                 neutral:{
-                    dark:colors.grey[700],
-                    main:colors.grey[500],
-                    light:colors.grey[100],
+                    dark:colors.gray[700],
+                    main:colors.gray[500],
+                    light:colors.gray[100],
                 },
                 background:{
                     default:"#fcfcfc"
@@ -206,5 +209,5 @@ export const useMode=()=>{
 
 
 const theme=useMemo(()=>createTheme(themeSettings(mode)),[mode]);
-return [theme,memo]
+return [theme,colorMode]
 }

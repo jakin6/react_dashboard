@@ -1,7 +1,8 @@
 import { DarkModeOutlined, LightModeOutlined, NotificationsOutlined,  PersonOutlined,  Search, SettingsOutlined } from '@mui/icons-material';
-import { IconButton, InputBase } from '@mui/material';
-import { Box } from '@mui/system';
+import { Box, IconButton, InputBase, useTheme } from '@mui/material';
+
 import React from 'react'
+import { useContext } from 'react';
 import { ColorModeContext, tokens } from '../../theme';
 
 const Topbar = () => {
@@ -14,16 +15,16 @@ const Topbar = () => {
         {/* SEARCH BAR */}
         <Box 
             display="flex"
-            bgcolor={colors.primary[400]}
-            borderRadius="3px"
-            >
-            <InputBase sx={{ml:2,flex:1}} placeholder="Search"/>    
-            </Box>
-        <IconButton type="button" sx={{p:1}}>
-            <Search/>
-        </IconButton>
+            bgcolor={colors.primary[500]}
+            borderRadius="3px">
+            <InputBase sx={{ml:2,flex:1}} placeholder="Search"/> 
+            <IconButton type="button" sx={{p:1}}>
+                <Search/>
+            </IconButton>   
+        </Box>
 
-        {/* icons */}
+
+        {/* Icons */}
         <Box display="flex">
             <IconButton onClick={colorMode.toggleColorMode}>
                 {theme.palette.mode === 'dark'? (
