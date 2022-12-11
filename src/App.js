@@ -1,6 +1,6 @@
 import {ColorModeContext,useMode} from './theme';
 import {CssBaseline,ThemeProvider} from '@mui/material'
-import { Routes } from 'react-router-dom';
+import { Routes,Route } from 'react-router-dom';
 //CssBaseline reset to default css
 import Topbar from './scenes/global/Topbar';
 import Sidebar from './scenes/global/sidebar';
